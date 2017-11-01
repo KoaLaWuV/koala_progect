@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+    <title>v-bind 实例</title>
+    
+</head>
+<body>
+    <h1>v-bind 实例</h1>
+    <hr>
+    <div id="app">
+        <h3>多选按钮绑定一个数组</h3>
+        <p>
+            <span v-for="sta in stars">
+                    <input type="checkbox" :id="sta.name" :value="sta.name" v-model="w_names">
+                    <label :for="sta.name"> {{sta.name}} </label>
+            </span>
+            <h4>
+                <span v-for="iii in w_names">
+                    {{iii}}.
+                </span>
+            </h4>
+
+        </p>
+    </div>
+
+
+    <script type="text/javascript">
+    
+        var app=new Vue({
+            el:'#app',
+            data:{
+                message:'hello wuwei ,this is your vue2.0 project!',
+                stars:[
+                    {name:'koala',age:'23'},
+                    {name:'wuwei',age:'12'},
+                    {name:'chao',age:'8'},
+                    {name:'xiaoshu',age:'18'},
+                ],
+                w_names:[],
+            } 
+        })
+    
+    
+    </script>
+</body>
+</html>
